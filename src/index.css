@@ -1,0 +1,323 @@
+:root {
+  --main-color: #2b6b14;
+  --detail-color: #432368;
+  --background-color: #ece6f1;
+  --white-color: #fdfdfd;
+  --black-color: #0c0712;
+  --darkgray-color: #282f26;
+  --gray-color: #5c615a;
+  --info-color: #124884;
+  --error-color: #b80521;
+  --warning-color: #cbc60d;
+  --success-color: #2b8809;
+  --mark-color: #bfdc4d;
+
+  --transition: 0.3s ease-in-out all;
+
+  /*shadow*/
+  --shadow-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-2: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-3: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-4: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  scroll-padding-top: 240px;
+}
+html {
+  font-size: 100%;
+}
+body {
+  background: var(--white-color);
+  font-family: "Josefin sans";
+  font-weight: 400;
+  color: var(--black-color);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  max-width: 1000px;
+}
+/*Header*/
+.header {
+  padding: 2rem;
+  text-align: center;
+  background: linear-gradient(rgba(8, 8, 0, 0.2), rgba(255, 255, 253, 0.3)),
+    url("https://cdn.pixabay.com/photo/2022/08/14/12/12/sansevieria-7385720_1280.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.header h1,
+.header h3 {
+  color: var(--white-color);
+}
+
+.header h1 {
+  font-weight: 300;
+  font-size: 4.5rem;
+  padding-top: 15px;
+  padding-left: 10px;
+  margin-left: 10px;
+  text-transform: capitalize;
+}
+.header h3 {
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-transform: capitalize;
+}
+
+/*navbar*/
+nav {
+  background: var(--background-color);
+}
+.onTop {
+  position: fixed;
+  width: 100%;
+  max-width: 1000px;
+  top: 0;
+  background-color: var(--background-color);
+
+  z-index: 6;
+}
+.navbar {
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+.navbar button {
+  display: fixed;
+}
+.large {
+  display: none;
+}
+.nav-toggle {
+  font-size: 1.5rem;
+  color: var(--detail-color);
+  background: transparent;
+  border-color: transparent;
+  transition: var(--transition);
+  cursor: pointer;
+}
+.nav-toggle:hover {
+  color: var(--detail-color);
+  transform: rotate(90deg);
+}
+.links a {
+  color: var(--black-color);
+  font-size: 1.5rem;
+  font-family: "Josefin sans";
+  font-weight: 300;
+  text-decoration: none;
+  text-transform: capitalize;
+  display: block;
+  padding: 0.3rem;
+  transition: var(--transition);
+  text-align: center;
+}
+.links a:hover {
+  background: var(--detail-color);
+  color: var(--white-color);
+  padding-left: 1.5rem;
+}
+.links-container {
+  transition: var(--transition);
+  overflow: hidden;
+}
+
+/*Content*/
+.home,
+.content,
+.info-short,
+.slick-container {
+  flex-direction: column;
+  margin: auto;
+  padding: 2rem;
+  font-family: "Montserrat";
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  width: 95%;
+  max-width: 800px;
+}
+.title {
+  font-weight: 300;
+  text-transform: uppercase;
+  font-size: 2.2rem;
+  text-align: left;
+  padding-top: 1rem;
+  font-family: "Josefin sans";
+  margin-bottom: 2rem;
+  color: var(--black-color);
+}
+
+.home p,
+.content p {
+  font-size: 1.5rem;
+  justify-content: space-between;
+  text-align: justify;
+  padding: 10px;
+  margin: 10px;
+}
+
+.home-img,
+.content-img {
+  width: 50%;
+
+  float: inline-start;
+  margin: 20px;
+  border-radius: 5px;
+  box-shadow: var(--shadow-1);
+}
+/*card*/
+.info-short {
+  height: 400px;
+  background-color: var(--main-color);
+  border-radius: 5px;
+  padding: 0;
+  background: url("https://img.freepik.com/free-photo/glad-satisfied-young-man-with-stubble-holds-sansevieria-snakeplant-cares-about-indoor-plant-shows-direction-where-he-bought-flower-dressed-uniform_273609-31230.jpg?w=1060&t=st=1699437361~exp=1699437961~hmac=e4ee6388f2520611b2f58873809e1883c22a2c074ea0ce7e5d785a6b709d1758");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.item-info {
+  display: block;
+  align-items: start;
+  text-align: start;
+  justify-content: start;
+  margin: 5px;
+  padding: 20px;
+}
+.item-info h5 {
+  font-weight: 300;
+  font-size: 1.3rem;
+  padding: 10px;
+
+  text-transform: uppercase;
+}
+.icon {
+  margin: 5px;
+  display: inline;
+  font-size: 2rem;
+
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+.info-short hr {
+  border: 1px solid var(--background-color);
+  color: var(--black-color);
+  box-shadow: var(--shadow-1);
+  width: 40%;
+}
+
+.item-info p {
+  font-size: 1.1rem;
+  padding: 10px;
+}
+
+/* Slick Carousel  */
+
+.slick-slide img {
+  display: inline-flex;
+}
+
+.slick-prev::before {
+  color: var(--darkgray-color);
+  font-size: 1.5rem;
+}
+.slick-next::before {
+  color: var(--darkgray-color);
+  font-size: 1.5rem;
+}
+.sans-img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  margin-bottom: 2rem;
+  object-fit: cover;
+  border: none;
+  box-shadow: var(--shadow-3);
+}
+
+.name {
+  text-transform: uppercase;
+  color: var(--black-color);
+  font-weight: 300;
+  font-size: 1.4rem;
+  padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  .header {
+    width: 100%;
+    gap: 0.5em;
+    padding: 0.5em;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  nav {
+    background-color: var(--main-color);
+  }
+  .onTop {
+    background-color: var(--main-color);
+
+    justify-content: center;
+  }
+
+  .nav-center {
+    margin: 0;
+    padding: 0;
+  }
+  .links a:hover {
+    color: var(--mark-color);
+    padding-right: 1.5rem;
+    font-size: 1.8rem;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+
+  ul.links {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+  }
+  ul.links li a {
+    float: left;
+    margin-left: 2rem;
+    justify-content: space-between;
+    text-decoration: none;
+    color: var(--white-color);
+    font-size: 1.5rem;
+    font-family: "Josefin sans";
+    font-weight: 300;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: var(--transition);
+    text-align: center;
+  }
+
+  body {
+    margin: auto;
+  }
+}
+@media (min-width: 1000px) {
+  body {
+    margin: auto;
+  }
+  .app {
+    background-color: var(--background-color);
+    height: 100%;
+  }
+}
